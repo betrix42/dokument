@@ -1,51 +1,58 @@
-<!DOCTYPE html>
-<html lang="ru">
 
+            <!DOCTYPE1. html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta charset="viewport" content="width=devise-width, initial-scale=1.0">
-    <title>CodeSnippet Vault</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSnippet Vault & DevDocs</title>
     <link rel="stylesheet" href="документация.css">
 </head>
-
 <body>
     <div class="container">
-        <h1>Документация по ЯП</h1>
-        <div class="lang-tabs">
-            <button class="tab-btn active" data-lang="ALL">Все теги</button>
-            <button class="tab-btn" data-lang="JS">JS</button>
-            <button class="tab-btn" data-lang="CSS">CSS</button>
-            <button class="tab-btn" data-lang="HTML">HTML</button>
-            <button class="tab-btn" data-lang="PYTHON">PYTHON</button>
-        </div>
+        <header>
+            <h1>CodeSnippet Vault</h1>
+            <p>Хранилище шпаргалок и официальная документация DevDocs</p>
+        </header>
+
+        <!-- Поиск -->
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="поиск по названию">
-            <select id="tagFilter">
-            <option value="ALL">Все теги</option>
-            <option value="JS"> JS</option>
-            <option value="CSS">CSS</option>
-            <option value="HTML">HTML</option>
-            <option value="PYTHON">PYTHON</option>
-        </select>
+            <input type="text" id="searchInput" placeholder="Поиск по названию или языку...">
         </div>
 
-        <form id="addSnippetForm" class="snippet-form">
-            <h3>Добавть шпоргалку</h3>
-            <input type="text" id="newTitle" placeholder="загаловок шпаргалки" required>
-            <select id="newLang" required>
-                    <option value="JS"> JS</option>
-                    <option value="CSS">CSS</option>
-                    <option value="HTML">HTML</option>
-                    <option value="PYTHON">PYTHON</option>
-                </select>
-            <textarea id="newCode" placeholder="вставьте код" required></textarea>
-            <input type="text" id="newDesc" placeholder="краткое описание" required>
-            <button type="submit" class="submit-btn">Сохранить</button>
-        </form>
-        <div id="snippetsContainer" class="snippets-grid">
+        <!-- Вкладки категорий -->
+        <div class="tabs" id="tabButtons">
+            <button class="tab-btn active" data-lang="ALL">ALL</button>
+            <button class="tab-btn" data-lang="JS">JS</button>
+            <button class="tab-btn" data-lang="HTML">HTML</button>
+            <button class="tab-btn" data-lang="CSS">CSS</button>
+            <button class="tab-btn" data-lang="PYTHON">PYTHON</button>
+            <button class="tab-btn" data-lang="TYPESCRIPT">TYPESCRIPT</button>
+            <button class="tab-btn" data-lang="C++">C++</button>
         </div>
+
+        <!-- Контейнер для карточек -->
+        <main id="snippetsContainer" class="snippets-grid"></main>
+
+        <!-- Форма добавления своей шпаргалки -->
+        <section class="form-section">
+            <h2>Добавить свою шпаргалку</h2>
+            <form id="addForm">
+                <input type="text" id="newTitle" placeholder="Название шпаргалки" required>
+                <select id="newLang" required>
+                    <option value="JS">JavaScript</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="PYTHON">Python</option>
+                    <option value="TYPESCRIPT">TypeScript</option>
+                    <option value="C++">C++</option>
+                </select>
+                <input type="text" id="newDesc" placeholder="Краткое описание" required>
+                <textarea id="newCode" placeholder="Вставьте ваш код..." rows="5"></textarea>
+                <button type="submit" class="submit-btn">Сохранить в vault</button>
+            </form>
+        </section>
     </div>
+
     <script src="документация.js"></script>
 </body>
-
 </html>
