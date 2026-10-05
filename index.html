@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="viewport" content="width=devise-width, initial-scale=1.0">
+    <title>CodeSnippet Vault</title>
+    <link rel="stylesheet" href="документация.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Документация по ЯП</h1>
+        <div class="lang-tabs">
+            <button class="tab-btn active" data-lang="ALL">Все теги</button>
+            <button class="tab-btn" data-lang="JS">JS</button>
+            <button class="tab-btn" data-lang="CSS">CSS</button>
+            <button class="tab-btn" data-lang="HTML">HTML</button>
+            <button class="tab-btn" data-lang="PYTHON">PYTHON</button>
+        </div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="поиск по названию">
+            <select id="tagFilter">
+            <option value="ALL">Все теги</option>
+            <option value="JS"> JS</option>
+            <option value="CSS">CSS</option>
+            <option value="HTML">HTML</option>
+            <option value="PYTHON">PYTHON</option>
+        </select>
+        </div>
+
+        <form id="addSnippetForm" class="snippet-form">
+            <h3>Добавть шпоргалку</h3>
+            <input type="text" id="newTitle" placeholder="загаловок шпаргалки" required>
+            <select id="newLang" required>
+                    <option value="JS"> JS</option>
+                    <option value="CSS">CSS</option>
+                    <option value="HTML">HTML</option>
+                    <option value="PYTHON">PYTHON</option>
+                </select>
+            <textarea id="newCode" placeholder="вставьте код" required></textarea>
+            <input type="text" id="newDesc" placeholder="краткое описание" required>
+            <button type="submit" class="submit-btn">Сохранить</button>
+        </form>
+        <div id="snippetsContainer" class="snippets-grid">
+        </div>
+    </div>
+    <script src="документация.js"></script>
+</body>
+
+</html>
