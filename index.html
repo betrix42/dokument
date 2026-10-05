@@ -12,6 +12,23 @@
             <h1>CodeSnippet Vault</h1>
             <p>Хранилище шпаргалок и официальная документация DevDocs</p>
         </header>
+        <section class="form-section" style="margin-bottom: 30px;">
+            <h2>Добавить свою шпаргалку</h2>
+            <form id="addForm">
+                <input type="text" id="newTitle" placeholder="Название шпаргалки" required>
+                <select id="newLang" required>
+                    <option value="JS">JavaScript</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="PYTHON">Python</option>
+                    <option value="TYPESCRIPT">TypeScript</option>
+                    <option value="C++">C++</option>
+                </select>
+                <input type="text" id="newDesc" placeholder="Краткое описание" required>
+                <textarea id="newCode" placeholder="Вставьте ваш код..." rows="5"></textarea>
+                <button type="submit" class="submit-btn">Сохранить в vault</button>
+            </form>
+        </section>
 
         <!-- Поиск -->
         <div class="search-box">
@@ -30,23 +47,6 @@
         </div>
 
         <!-- Форма добавления шпаргалки (теперь находится над карточками) -->
-        <section class="form-section" style="margin-bottom: 30px;">
-            <h2>Добавить свою шпаргалку</h2>
-            <form id="addForm">
-                <input type="text" id="newTitle" placeholder="Название шпаргалки" required>
-                <select id="newLang" required>
-                    <option value="JS">JavaScript</option>
-                    <option value="HTML">HTML</option>
-                    <option value="CSS">CSS</option>
-                    <option value="PYTHON">Python</option>
-                    <option value="TYPESCRIPT">TypeScript</option>
-                    <option value="C++">C++</option>
-                </select>
-                <input type="text" id="newDesc" placeholder="Краткое описание" required>
-                <textarea id="newCode" placeholder="Вставьте ваш код..." rows="5"></textarea>
-                <button type="submit" class="submit-btn">Сохранить в vault</button>
-            </form>
-        </section>
 
         <!-- Контейнер для вывода карточек -->
         <main id="snippetsContainer" class="snippets-grid"></main>
