@@ -1,5 +1,4 @@
-
-            <!DOCTYPE1. html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -30,11 +29,8 @@
             <button class="tab-btn" data-lang="C++">C++</button>
         </div>
 
-        <!-- Контейнер для карточек -->
-        <main id="snippetsContainer" class="snippets-grid"></main>
-
-        <!-- Форма добавления своей шпаргалки -->
-        <section class="form-section">
+        <!-- Форма добавления шпаргалки (теперь находится над карточками) -->
+        <section class="form-section" style="margin-bottom: 30px;">
             <h2>Добавить свою шпаргалку</h2>
             <form id="addForm">
                 <input type="text" id="newTitle" placeholder="Название шпаргалки" required>
@@ -51,8 +47,12 @@
                 <button type="submit" class="submit-btn">Сохранить в vault</button>
             </form>
         </section>
+
+        <!-- Контейнер для вывода карточек -->
+        <main id="snippetsContainer" class="snippets-grid"></main>
     </div>
 
     <script src="документация.js"></script>
 </body>
 </html>
+
