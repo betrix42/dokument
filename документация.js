@@ -73,7 +73,7 @@ const devDocsArticles = [
         tag: 'YouTube',
         description: 'Отдохни',
         url: 'https://www.youtube.com/'
-    }
+    },
 ];
 
 // Получение элементов DOM
