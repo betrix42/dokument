@@ -67,6 +67,13 @@ const devDocsArticles = [
         description: 'Справочник по стилям, селекторам, Flexbox, CSS Grid Layout и анимациям.',
         url: 'https://devdocs.io/css/'
     }
+    {
+        id: 'devdocs-YouTube',
+        title: 'YouTube — для отдыха и рагрузки мозга',
+        tag: 'YouTube',
+        description: 'Отдохни',
+        url: 'https://www.youtube.com/'
+    }
 ];
 
 // Получение элементов DOM
