@@ -17,7 +17,7 @@ html {
 body {
     display: block !important;
     /* Твой оригинальный фон */
-    background: linear-gradient(135deg, #264653 0%, #E9C46A 50%, #31103f 100%) fixed !important;
+    background: linear-gradient(135deg, #264653 0%, #E9C46A 50%, #4ECDC4 100%) fixed !important;
     color: #f8fafc !important;
     width: 100% !important;
     height: auto !important;
