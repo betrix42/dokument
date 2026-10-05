@@ -20,7 +20,7 @@ const initialSnippets = [
         tag: "C++",
         code: '#include <iostream>\n\nint main() {\n    std::cout << "Hello World!";\n    return 0;\n}',
         description: "Базовый вывод в поток std::cout."
-    }
+    },
 ];
 
 // Документация DevDocs.io
