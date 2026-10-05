@@ -5,6 +5,11 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+    height: auto;
+    overflow-y: scroll;
+}
+
 body {
     background: radial-gradient( circle, #521d4f, #2c3847);
     margin: 0;
