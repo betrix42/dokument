@@ -21,6 +21,28 @@ const initialSnippets = [
         code: '#include <iostream>\n\nint main() {\n    std::cout << "Hello World!";\n    return 0;\n}',
         description: "Базовый вывод в поток std::cout."
     },
+    // Музыкальные треки
+    {
+        id: 'music-1',
+        title: "Rosa Walton & Hallie Coggins — I Really Want to Stay at Your House",
+        tag: "MUSIC",
+        audioUrl: "Rosa Walton & Hallie Coggins - I Really Want To Stay At Your House.mp3",
+        description: "Саундтрек из Cyberpunk: Edgerunners[cite: 2]."
+    },
+    {
+        id: 'music-2',
+        title: "Coda — Bloody Stream",
+        tag: "MUSIC",
+        audioUrl: "Coda_-_Bloody_Stream_48146842.mp3",
+        description: "Опенинг из JoJo's Bizarre Adventure[cite: 3]."
+    },
+    {
+        id: 'music-3',
+        title: "Kroi — SPIN",
+        tag: "MUSIC",
+        audioUrl: "Kroi_-_SPIN_82373014.mp3",
+        description: "Динамичный трек Kroi - SPIN[cite: 4]."
+    }
 ];
 
 // Документация DevDocs.io
@@ -106,9 +128,20 @@ function renderSnippets(data) {
         const card = document.createElement('div');
         card.className = 'card';
 
-        const actionButton = item.url 
-            ? `<a href="${item.url}" target="_blank" class="card-btn link-btn">📖 Открыть в DevDocs</a>`
-            : `<button class="card-btn copy-btn" onclick="copyCode(this)">📋 Скопировать код</button>`;
+        let actionContent = '';
+
+        if (item.url) {
+            actionContent = `<a href="${item.url}" target="_blank" class="card-btn link-btn">📖 Открыть в DevDocs</a>`;
+        } else if (item.audioUrl) {
+            actionContent = `
+                <audio controls style="width: 100%; margin-top: 10px;">
+                    <source src="${item.audioUrl}" type="audio/mpeg">
+                    Ваш браузер не поддерживает аудио элемент.
+                </audio>
+            `;
+        } else {
+            actionContent = `<button class="card-btn copy-btn" onclick="copyCode(this)">📋 Скопировать код</button>`;
+        }
 
         card.innerHTML = `
             <div class="card-header">
@@ -117,7 +150,7 @@ function renderSnippets(data) {
             </div>
             <p>${item.description}</p>
             ${item.code ? `<pre><code>${escapeHtml(item.code)}</code></pre>` : ''}
-            ${actionButton}
+            ${actionContent}
         `;
 
         container.appendChild(card);
@@ -131,8 +164,8 @@ function filterSnippets() {
     const filtered = snippets.filter(item => {
         const matchesLang = (currentActiveLang === 'ALL') || (item.tag.toUpperCase() === currentActiveLang.toUpperCase());
         const matchesSearch = item.title.toLowerCase().includes(query) || 
-                              item.description.toLowerCase().includes(query) ||
-                              (item.code && item.code.toLowerCase().includes(query));
+                            item.description.toLowerCase().includes(query) ||
+                            (item.code && item.code.toLowerCase().includes(query));
 
         return matchesLang && matchesSearch;
     });
