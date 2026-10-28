@@ -1,4 +1,3 @@
-// Начальные примеры кода
 const initialSnippets = [
     {
         id: 1,
@@ -27,21 +26,21 @@ const initialSnippets = [
         title: "Rosa Walton & Hallie Coggins — I Really Want to Stay at Your House",
         tag: "MUSIC",
         audioUrl: "Rosa Walton & Hallie Coggins - I Really Want To Stay At Your House.mp3",
-        description: "Саундтрек из Cyberpunk: Edgerunners[cite: 2]."
+        description: "Саундтрек из Cyberpunk: Edgerunners."
     },
     {
         id: 'music-2',
         title: "Coda — Bloody Stream",
         tag: "MUSIC",
         audioUrl: "Coda_-_Bloody_Stream_48146842.mp3",
-        description: "Опенинг из JoJo's Bizarre Adventure[cite: 3]."
+        description: "Опенинг из JoJo's Bizarre Adventure."
     },
     {
         id: 'music-3',
         title: "Kroi — SPIN",
         tag: "MUSIC",
         audioUrl: "Kroi_-_SPIN_82373014.mp3",
-        description: "Динамичный трек Kroi - SPIN[cite: 4]."
+        description: "Динамичный трек Kroi - SPIN."
     }
 ];
 
@@ -191,17 +190,25 @@ function copyCode(btn) {
     });
 }
 
-// Обработчик формы
+// УМНАЯ ОБРАБОТКА ФОРМЫ (Если выбрано Music — переключаем в audioUrl)
 addForm.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    const tag = document.getElementById('newLang').value;
+    const inputContent = document.getElementById('newCode').value.trim();
 
     const newSnippet = {
         id: Date.now(),
         title: document.getElementById('newTitle').value,
-        tag: document.getElementById('newLang').value,
-        description: document.getElementById('newDesc').value,
-        code: document.getElementById('newCode').value
+        tag: tag,
+        description: document.getElementById('newDesc').value
     };
+
+    if (tag === 'MUSIC') {
+        newSnippet.audioUrl = inputContent; // Если музыка — сохраняем как ссылку/путь к аудио
+    } else {
+        newSnippet.code = inputContent;     // Иначе — обычный код
+    }
 
     snippets.unshift(newSnippet);
     saveToStorage();
