@@ -9,11 +9,10 @@
 <body>
     <div class="container">
         <header>
-            <h1>Добро пожаловать на мою докуметацию</h1>
+            <h1>Добро пожаловать на мою документацию</h1>
             <p>Хранилище шпаргалок и официальная документация DevDocs</p>
         </header>
         
-
         <!-- Поиск -->
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="Поиск по названию или языку...">
@@ -28,12 +27,12 @@
             <button class="tab-btn" data-lang="PYTHON">PYTHON</button>
             <button class="tab-btn" data-lang="TYPESCRIPT">TYPESCRIPT</button>
             <button class="tab-btn" data-lang="C++">C++</button>
+            <button class="tab-btn" data-lang="MUSIC">MUSIC</button>
         </div>
-
-        <!-- Форма добавления шпаргалки (теперь находится над карточками) -->
 
         <!-- Контейнер для вывода карточек -->
         <main id="snippetsContainer" class="snippets-grid"></main>
+
         <section class="form-section" style="margin-bottom: 30px;">
             <h2>Добавить свою шпаргалку</h2>
             <form id="addForm">
@@ -45,6 +44,7 @@
                     <option value="PYTHON">Python</option>
                     <option value="TYPESCRIPT">TypeScript</option>
                     <option value="C++">C++</option>
+                    <option value="MUSIC">Music</option>
                 </select>
                 <input type="text" id="newDesc" placeholder="Краткое описание" required>
                 <textarea id="newCode" placeholder="Вставьте ваш код..." rows="5"></textarea>
@@ -56,4 +56,3 @@
     <script src="документация.js"></script>
 </body>
 </html>
-
